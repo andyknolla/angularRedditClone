@@ -4,3 +4,20 @@ body {
 .main-photo {
   height: 200px;
 }
+.entry {
+    display: flex;
+    flex-direction: row;
+}
+.image {
+  margin-right: 15px;
+
+}
+.info {
+
+}
+.positive {
+  color: green;
+}
+.negative {
+  color: red;
+}
