@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="reddit">
+
+<head>
+    <meta charset="utf-8">
+    <title>Climbing Colorado</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="container">
+    <div class="page-header">
+        <h1>Climbing Colorado</h1>
+        <button type="button" name="button" ng-click="" class="btn btn-primary btn-lg" data-toggle="modal" data-target="addPost">Submit Post</button>
+    </div>
+
+    <div class="modal fade" id="addPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Write Post</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input id='title' type="text" name="name" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Image URL</label>
+                            <input id='image' type="url" name="name" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea id="description" name="name" rows="8" cols="40"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="author">Author</label>
+                            <input id='author' type="text" name="name" value="">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="well" ng-controller="powerController">
+        <li ng-repeat=" place in places | orderBy: votes ">
+            <div class="well row">
+                <div class="col-m-3 col-m-pull-8">
+                    <IMG ng-src="{{ place.image }}" class="main-photo">
+                </div>
+                <div class="col-m-8 col-m-push-3">
+                    <h3> {{ place.title }} </h3>
+                    <p>
+                        By {{ place.author }}
+                    </p>
+                    <p>
+                        {{ place.description }}
+                    </p>
+                </div>
+            </div>
+        </li>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.3/angular-moment.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
