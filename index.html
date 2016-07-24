@@ -9,81 +9,100 @@
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body class="container">
+<body ng-controller="powerController" class="container">
     <div class="page-header">
         <h1>Climbing Colorado</h1>
         <button type="button" name="button" ng-click="" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addPost">Submit Post</button>
     </div>
 
+    <!-- <form name="addPost" ng-submit-"addPost" class="">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input id='title' type="text" ng-model="newPlace.title">
+        </div>
+        <div class="form-group">
+            <label for="image">Image URL</label>
+            <input id='image' type="url" ng-model="newPlace.image">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" ng-model="newPlace.description" rows="8" cols="40"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input id='author' type="text" ng-model="newPlace.author">
+        </div>
+    </form>
+    <input type="submit" class="btn" name="button"></button> -->
+
+
+
     <!-- Modal -->
-    <div class="modal fade" id="addPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <!-- <div class="modal fade" id="addPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Add a Post</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body"> -->
+                <button type="button" name="button" ng-hide="showForm" ng-click="showFormButton()" >Add a place</button>
+                <button type="button" name="button" ng-show="showForm" ng-click="hideFormButton()" >Close form</button>
 
-                    <form class="">
+                    <form id="addForm" action="" name="addForm_name" ng-submit="addPlace()" class="" ng-show="showForm" novalidate>
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input id='title' type="text" ng-model="newTitle" name="name" value="">
+                            <input id='title' name="newTitle" type="text" ng-model="newPlace.title">
                         </div>
                         <div class="form-group">
                             <label for="image">Image URL</label>
-                            <input id='image' type="url"  ng-model="newImage" name="name" value="">
+                            <input id='image' type="url" ng-model="newPlace.image">
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea id="description" ng-model="newDescription" name="name" rows="8" cols="40"></textarea>
+                            <textarea id="description" ng-model="newPlace.description" rows="8" cols="40"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="author">Author</label>
-                            <input id='author' type="text" ng-model="newAuthor" name="name" value="">
+                            <input id='author' type="text" ng-model="newPlace.author">
                         </div>
+                        <input type="submit" form="addForm" type="button" class="btn btn-primary" name="button">
                     </form>
+                <!-- </div> -->
 
+                <!-- <div class="modal-footer">
                 </div>
-                <div class="modal-footer">
-                    <button ng-click="{{ place.addPlace() }}" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
-                </div>
+
+
+
             </div>
         </div>
-    </div>
-    <div class="well" ng-controller="powerController">
-        <div ng-repeat=" place in places | orderBy: places.votes ">
-            <div class="well entry">
-                <div class='image'>
-                    <IMG ng-src="{{ place.image }}" class="main-photo">
-                </div>
-                <div class="info"
-                    <h3> {{ place.title }} </h3>
-                    <p>
-                        By {{ place.author }}
-                    </p>
-                    <span class="glyphicon glyphicon-chevron-up"></span><span class="glyphicon glyphicon-chevron-down"></span><span ng-class="{positive: {{ place.votes > 0 }}, negative: {{ place.votes < 0 }} }"> {{ place.votes }}</span>
-                    <p>
-                        {{ place.description }}
-                    </p>
-                </div>
+    </div> -->
+    <div ng-repeat=" place in places | orderBy: places.votes ">
+        <div class="well entry">
+            <div class='image'>
+                <IMG ng-src="{{ place.image }}" class="main-photo">
+            </div>
+            <div class="info" <h3> {{ place.title }} </h3>
+                <p>
+                    By {{ place.author }}
+                </p>
+                <span class="glyphicon glyphicon-chevron-up"></span><span class="glyphicon glyphicon-chevron-down"></span><span ng-class="{positive: {{ place.votes > 0 }}, negative: {{ place.votes < 0 }} }"> {{ place.votes }}</span>
+                <p>
+                    {{ place.description }}
+                </p>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
-
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js">
     </script>
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.3/angular-moment.js"></script> -->
-    <script type="text/javascript" src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.3/angular-moment.js"></script>
+    <script src="app/data.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
 </body>
 
 </html>
