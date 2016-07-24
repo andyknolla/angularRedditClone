@@ -87,7 +87,9 @@
                 <p>
                     By {{ place.author }}
                 </p>
-                <span class="glyphicon glyphicon-chevron-up"></span><span class="glyphicon glyphicon-chevron-down"></span><span ng-class="{positive: {{ place.votes > 0 }}, negative: {{ place.votes < 0 }} }"> {{ place.votes }}</span>
+                <span ng-click="upVote()" class="glyphicon glyphicon-chevron-up"></span>
+                <span ng-click="downVote()" class="glyphicon glyphicon-chevron-down"></span>
+                <span ng-class="{positive: {{ place.votes > 0 }}, negative: {{ place.votes < 0 }} }"> {{ place.votes }}</span>
                 <p>
                     {{ place.description }}
                 </p>
