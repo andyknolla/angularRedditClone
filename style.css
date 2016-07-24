@@ -21,3 +21,10 @@ body {
 .negative {
   color: red;
 }
+.dateAndComments {
+  flex-direction: row;
+}
+.commentForm {
+  display: flex;
+  flex-direction: column;
+}

@@ -7,7 +7,12 @@ app.controller("powerController", function($scope) {
 
     $scope.places = places
 
+    $scope.commentCount = function(place) {
+      return place.comments.length
+    }
+
     $scope.showForm = false
+    $scope.showCommentsForm = false
     $scope.showFormButton = function() {
         console.log('showformbutton works');
         $scope.showForm = true
@@ -33,5 +38,22 @@ app.controller("powerController", function($scope) {
       console.log('vote function works');
       place.votes -= 1
     }
+    $scope.showCommentsButton = function() {
+      $scope.showComments = true
+    }
+    $scope.hideCommentsButton = function() {
+      $scope.showComments = false
+    }
 
+    $scope.showCommentsFormButton = function() {
+      $scope.showCommentsForm = true
+    }
+    $scope.hideCommentsFormButton = function() {
+      $scope.showCommentsForm = false
+    }
+    $scope.newComment = {}
+    $scope.addComment = function(place) {
+      place.comments.push($scope.newComment)
+      $scope.newComment = {}
+    }
 });

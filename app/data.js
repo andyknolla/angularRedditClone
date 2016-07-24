@@ -6,14 +6,28 @@ places = [
     image: 'http://i20.photobucket.com/albums/b226/vivid_one/Hiking/Lumpy%20Ridge%20Feb%202009/21909_Lumpy_Ridge13x.jpg',
     description: 'Located just north of Estes Park, Lumpy Ridge consists of over three miles of granite domes, cliffs, and outcrops. The Ridge overlooks the lower reaches of Black Canyon, site of the historic MacGregor Ranch. This ranch has been a local landmark since the 1880s, and its lush grasslands, together with the mountains of the Front Range, provide beautiful, panoramic scenery for climbers to enjoy.\n\t With several hundred routes to choose from, Lumpy ridge is the most heavily visited climbing area in Estes Valley. It is best known for excellent crack climbing, but face climbs abound, and bolts amply protect the newer routes. The majority of the rocks recline at about a 80-degree pitch, and generally the climbing requires refined technique instead of brute force. The major cliffs face south and recieve sun all day long.',
     votes: 10,
-    comments: []
+    comments: [
+      {
+        author: 'Andy',
+        comment: 'I love this place'
+      },
+      {
+        author: 'Nick',
+        comment: 'The best place ever'
+      }
+    ]
   }, {
     title: 'Cathedral Spires',
     author: 'Nick Casamata',
     image: 'http://www.summitpost.org/images/large/187135.JPG',
     description: 'The slender, spire-like nature of the Cynical Pinnacle stands resolute on the hillside, serving as a lodestar and casting out a beacon of light to wayward climbers, guiding them to perhaps the best 5.9 and 5.11 multipitch jam cracks in the state. Further west, Poe Buttress and Sunshine Wall wait with even more ultra-classic multipitch routes from 5.9 to 5.12. Splitter cracks up vertical walls not your thing? Head even further west and check out The Dome and its smooth, friction-dependent slabs that are unmatched and unparalleled by anything outside of Tuolumne Meadows in California.',
     votes: 3,
-    comments: []
+    comments: [
+      {
+        author: 'Andy',
+        comment: 'Glorious'
+      }
+    ]
   }, {
     title: 'Eldorado Canyon',
     author: 'Steve Levin',
