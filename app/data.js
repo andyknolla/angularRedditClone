@@ -15,7 +15,9 @@ places = [
         author: 'Nick',
         comment: 'The best place ever'
       }
-    ]
+    ],
+    showComments: false,
+    showCommentsForm: false
   }, {
     title: 'Cathedral Spires',
     author: 'Nick Casamata',
@@ -27,20 +29,26 @@ places = [
         author: 'Andy',
         comment: 'Glorious'
       }
-    ]
+    ],
+    showComments: false,
+    showCommentsForm: false
   }, {
     title: 'Eldorado Canyon',
     author: 'Steve Levin',
     image: 'http://www.michaeldeleonphoto.com/wp-content/uploads/2013/08/20130826_024-Edit.jpg',
     description: 'Eldorado Canyon is one of the great American rockclimbing areas. Cut through the uplifted Flatirons front southwest of Boulder, Colorado, the canyons\'s sheer walls rise hundreds of feet up steep slopes on either side of the cascading South Boulder Creek, offering a broad range of climbing routes, from single-pitch cragging to multi-pitch adventure climbing. The canyon, preserved as a state park, is unspoiled and extraordinarily beautiful. Presenting a complex rock architecture of iconic cliff formations, the steep sandstone walls are a lichen-streaked palette of color, ranging from bright orange, vermillion, and maroon red, to yellow and lime green, to black and gray. Pigeons and swifts soar through the sky, the creek crashes down its steep course, and climbers dot the high walls. With something for every climber, from 5.6 "moderates", to classic 5.9 and 5.10 climbs, to extreme high-end challenges, Eldorado is a diverse, beautiful, rewarding place to climb.',
     votes: 8,
-    comments: []
+    comments: [],
+    showComments: false,
+    showCommentsForm: false
   }, {
     title: 'Black Canyon of the Gunnison',
     author: 'Robbie Williams',
     image: 'http://www.visitmontrose.com/ImageRepository/Path?filePath=%2FDocuments%5CContent%5C24%5C32%2FBlack+Canyon+4_201312121425412074.jpg',
     description: 'Before the birds sing, you awake. Rise in the dark with mindfulness and purpose. In the darkness, breakfast is hurried. Then, when the sun is born on the crest of the horizon, you grab gear and rope and water and candy bars. The shadows of the junipers are long, cast toward you across the dry ground. You and  your partner run through trees and scrub oak and yucca to the opening of a narrow defile, the gash of a gully, the descent, the start.\n Success is not guaranteed. Can you escape from the depths by sunset? By midafternoon, the shadows that mark the passing of the hours have crept up the cliffs on the opposite rim. And the realization hits: that you have no choice but to continue--that it is easier to keep climbing, upward to safety, to regain the sanctuary of the juniper trees on the plateua-- than to fail, to rappel off, to retreat, to thrash back up that dreaded descent gully. Little did you  know that the die was cast hours, perhaps even days ago, when you finalized your plans to come to the canyon -- that you must continue your climb. But now as daylight wanes, your worn down muscles and adrenaline-fed thoughts know it. You are completely committed to finishing your ascent.',
     votes: 4,
-    comments: []
+    comments: [],
+    showComments: false,
+    showCommentsForm: false
   }
 ];
