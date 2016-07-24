@@ -12,7 +12,7 @@
 <body ng-controller="powerController" class="container">
     <div class="page-header">
         <h1>Climbing Colorado</h1>
-        <button type="button" name="button" ng-click="" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addPost">Submit Post</button>
+        <!-- <button type="button" name="button" ng-click="" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addPost">Submit Post</button> -->
     </div>
 
     <!-- <form name="addPost" ng-submit-"addPost" class="">
@@ -87,8 +87,8 @@
                 <p>
                     By {{ place.author }}
                 </p>
-                <span ng-click="upVote()" class="glyphicon glyphicon-chevron-up"></span>
-                <span ng-click="downVote()" class="glyphicon glyphicon-chevron-down"></span>
+                <span ng-click="upVote(place)" class="glyphicon glyphicon-chevron-up"></span>
+                <span ng-click="downVote(place)" class="glyphicon glyphicon-chevron-down"></span>
                 <span ng-class="{positive: {{ place.votes > 0 }}, negative: {{ place.votes < 0 }} }"> {{ place.votes }}</span>
                 <p>
                     {{ place.description }}
