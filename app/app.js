@@ -1,7 +1,7 @@
 $(document).ready(function() {
 })
 
-var app = angular.module("reddit", [])
+var app = angular.module("reddit", ['ngAnimate'])
 
 app.controller("powerController", function($scope) {
 
