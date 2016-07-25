@@ -4,6 +4,17 @@ body {
 .main-photo {
   height: 200px;
 }
+.page-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  background: hsla(41, 63%, 46%, 0.5);
+  color: hsl(41, 27%, 18%);
+}
+h1 {
+  margin: 15px;
+
+}
 .entry {
     display: flex;
     flex-direction: row;
@@ -27,4 +38,14 @@ body {
 .commentForm {
   display: flex;
   flex-direction: column;
+}
+.commentsTitle {
+  font-size: 19px;
+  margin-right: 10px;
+}
+.glyphicon {
+  margin: 8px;
+}
+.addPlace {
+  margin: 10px;
 }

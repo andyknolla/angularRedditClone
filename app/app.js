@@ -6,6 +6,11 @@ var app = angular.module("reddit", [])
 app.controller("powerController", function($scope) {
 
     $scope.places = places
+    $scope.$watch('$scope.places.comments.length',
+      function(newValue, oldValue) {
+        console.log('scope watch');
+      }
+    )
 
     $scope.commentCount = function(place) {
       return place.comments.length
@@ -29,8 +34,16 @@ app.controller("powerController", function($scope) {
       $scope.newPlace = {}
     }
 // voting
+
+  //   $scope.$watch($scope.places.comments.length,
+  //     function(newVal, oldVal) {
+  //       commentsNegative = true
+  //     }
+  //
+  // )
+
+
     $scope.upVote = function(place) {
-      console.log('vote function works');
       place.votes += 1
     }
     $scope.downVote = function(place) {

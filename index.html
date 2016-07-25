@@ -11,7 +11,18 @@
 
 <body ng-controller="powerController" class="container">
     <div class="page-header">
-        <h1>Climbing Colorado</h1>
+        <h1 class="">Climbing Colorado</h1>
+        <button class="btn btn-primary addPlace" ng-hide="showForm" ng-click="showFormButton()">Add a place</button>
+        <button class="btn btn-primary addPlace" ng-show="showForm" ng-click="hideFormButton()">Close form</button>
+        <span class="form-group">
+            <label for="search">Search</label>
+            <input type="text" id="search" ng-model="search">
+        </span>
+        <!-- <label for="sortSelect">Sort by</label>
+         <select id="sortSelect" ng-model="sort">
+          <option value="title" selected>Title</option>
+          <option value="author" >Author</option>
+        </select> -->
         <!-- <button type="button" name="button" ng-click="" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addPost">Submit Post</button> -->
     </div>
 
@@ -46,8 +57,6 @@
                     <h4 class="modal-title" id="myModalLabel">Add a Post</h4>
                 </div>
                 <div class="modal-body"> -->
-    <button ng-hide="showForm" ng-click="showFormButton()">Add a place</button>
-    <button ng-show="showForm" ng-click="hideFormButton()">Close form</button>
 
     <form id="addForm" action="" name="addForm_name" ng-submit="addPlace()" class="" ng-show="showForm" novalidate>
         <div class="form-group">
@@ -78,52 +87,54 @@
             </div>
         </div>
     </div> -->
-    <div ng-repeat=" place in places | orderBy: places.votes ">
+    {{sort}}
+    <div ng-repeat="place in places | filter:search | orderBy:'-votes'">
         <div class="well entry">
             <div class='image'>
                 <IMG ng-src="{{ place.image }}" class="main-photo">
             </div>
-            <div class="info" <h3> {{ place.title }} </h3>
+            <div class="info">
+                <h3> {{ place.title }} </h3>
                 <p>
                     By {{ place.author }}
                 </p>
                 <span ng-click="upVote(place)" class="glyphicon glyphicon-chevron-up"></span>
                 <span ng-click="downVote(place)" class="glyphicon glyphicon-chevron-down"></span>
-                <span ng-class="{positive: {{ place.votes > 0 }}, negative: {{ place.votes < 0 }} }"> {{ place.votes }}</span>
+                <span ng-class="{positive: place.votes > 0, negative: place.votes < 0 }"> {{ place.votes }}</span>
                 <p>
                     {{ place.description }}
                 </p>
                 <div class="dateAndComments">
 
                     <span> {{ place.date }}</span>
-                    <span ng-hide="place.showComments">{{ commentCount(place) }}
-                    <ng-pluralize  ng-click="showCommentsButton(place)"
-                      count="{{commentCount(place)}}"
-                                       when="{
+
+                    <span class="commentsTitle" ng-hide="place.showComments">&vert; <span class="glyphicon glyphicon-comment"></span> {{ commentCount(place) }}
+                    <ng-pluralize class="commentsTitle" ng-click="showCommentsButton(place)" count="{{commentCount(place)}}" when="{
                                          '0': 'Comments',
                                          '1': 'Comment',
                                          'other': 'Comments'
                                        }">
+
                     </ng-pluralize>
-                  </span>
-                    <span ng-show="place.showComments" ng-click="hideCommentsButton(place)">Hide</span>
+                    </span>
+                    <span>&vert;</span>
+                    <h4 alt="click to hide" ng-show="place.showComments" ng-click="hideCommentsButton(place)">Comments</h4>
                     <!-- comments -->
                     <div ng-show="place.showComments" ng-repeat="comment in place.comments" class="">
-                        <span>{{comment.author}}</span>
-                        <div class="">
+                        <h5>{{comment.author}}</h5>
+                        <p>
                             {{comment.comment}}
-                        </div>
+                        </p>
                     </div>
-                    <span ng-hide="place.showCommentsForm" ng-click="showCommentsFormButton(place)">Add Comment</span>
-                    <span ng-show="place.showCommentsForm" ng-click="hideCommentsFormButton(place)">Add Comment</span>
+                    <span class="commentsTitle" ng-hide="place.showCommentsForm" ng-click="showCommentsFormButton(place)"><span class="glyphicon glyphicon-pencil"></span>Add Comment</span>
+                    <span class="commentsTitle" ng-show="place.showCommentsForm" ng-click="hideCommentsFormButton(place)"><span class="glyphicon glyphicon-pencil"></span>Add Comment</span>
                 </div>
                 <form class="commentForm" ng-show="place.showCommentsForm" ng-submit="addComment(place)">
-                    <span ng-show="place.showCommentsForm" ng-click="hideCommentsFormButton(place)">Close</span>
                     <label for="author">Author</label>
-                    <input id="author" type="text" autofocus ng-model="newComment.author" >
+                    <input id="author" type="text" autofocus ng-model="newComment.author">
                     <label for="comment">Comment</label>
-                    <textarea id="comment" rows="3" cols="40" placeholder="Write your comment here" ng-model="newComment.comment" ></textarea>
-                    <input ng-click="hideCommentsForm(place)" type="submit" name="name" value="submit" class="btn btn-primary" >
+                    <textarea id="comment" rows="3" cols="40" placeholder="Write your comment here" ng-model="newComment.comment"></textarea>
+                    <input ng-click="hideCommentsFormButton(place); showCommentsButton(place)" type="submit" name="name" value="submit" class="btn btn-primary">
                 </form>
             </div>
         </div>
