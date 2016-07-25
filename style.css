@@ -43,15 +43,22 @@ h1 {
   font-size: 19px;
   margin-right: 10px;
 }
+.commentSubmit {
+  width: 150px;
+  margin: 10px;
+}
 .glyphicon {
   margin: 8px;
 }
 .addPlace {
   margin: 10px;
 }
+
+
+
 /* ngAnimate  */
 
-.ng-enter {
+/*.ng-enter {
   transition:0.5s linear all;
   opacity:0;
 }
@@ -70,10 +77,10 @@ h1 {
 }
 
 /*This is for our hiding (this is not a class from ng-animate)*/
-.ng-hide {
+/*.ng-hide {
   transition:0.5s linear all;
   opacity:0;
-}
+}*/*/
 
 
 

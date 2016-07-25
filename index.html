@@ -9,7 +9,7 @@
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body ng-controller="powerController" class="container">
+<body ng-controller="mainController" class="container">
     <div class="page-header">
         <h1 class="">Climbing Colorado</h1>
         <button class="btn btn-primary addPlace" ng-hide="showForm" ng-click="showFormButton()">Add a place</button>
@@ -85,7 +85,7 @@
                     <input id="author" type="text" autofocus ng-model="newComment.author">
                     <label for="comment">Comment</label>
                     <textarea id="comment" rows="3" cols="40" placeholder="Write your comment here" ng-model="newComment.comment"></textarea>
-                    <input ng-click="hideCommentsFormButton(place); showCommentsButton(place)" type="submit" name="name" value="submit" class="btn btn-primary">
+                    <input ng-click="hideCommentsFormButton(place); showCommentsButton(place)" type="submit" name="name" value="submit" class="btn btn-primary commentSubmit">
                 </form>
             </div>
         </div>
@@ -95,12 +95,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js">
     </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.min.js"></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.3/angular-moment.js"></script>
-    <script src="app/data.js"></script>
-    <script type="text/javascript" src="app/app.js"></script>
+    <script src="javascripts/data.js"></script>
+    <script type="text/javascript" src="javascripts/app.js"></script>
+    <script type="text/javascript" src="javascripts/controllers.js"></script>
 </body>
 
 </html>
